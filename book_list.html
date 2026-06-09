@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>"
+/>
+    <title>북 리스트</title>
+</head>
+<body>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: "SeoulNotice";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Medium.woff2")
+          format("woff2");
+        font-weight: 500;
+        font-display: swap;
+      }
+
+      * {
+        font-family: "Pretendard Variable";
+      }
+
+      .font-seoul {
+        font-family: "SeoulNotice";
+      }
+    </style>
+  </head>
+  <body class="font-[Pretendard_Variable]">
+    <header
+      class="h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300"
+    >
+      <h1 class="text-xl font-bold font-seoul text-indigo-600">기록 보관소</h1>
+      <div class="flex items-center text-gray-800 gap-6 text-sm font-medium">
+        <button
+          class="px-1 py-2 text-indigo-600 font-bold border-b-2 border-indigo-600"
+        >
+          홈
+        </button>
+        <button
+          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
+        >
+          영화
+        </button>
+        <button
+          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
+        >
+          책
+        </button>
+        <button
+          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
+        >
+          통계
+        </button>
+        <button
+          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
+        >
+          기록 작성
+        </button>
+      </div>
+      <div class="flex items-center gap-4">
+        <div
+          class="flex justify-center w-80 px-4 py-1 bg-white border border-gray-300 rounded-full shadow-md"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-gray-600"
+          >
+            <path d="m21 21-4.34-4.34" />
+            <circle cx="11" cy="11" r="8" />
+          </svg>
+          <input
+            type="text"
+            placeholder="검색"
+            class="flex-1 pl-2 outline-none bg-transparent"
+          />
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-gray-600 hover:text-indigo-500"
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2" />
+          <path d="M12 20v2" />
+          <path d="m4.93 4.93 1.41 1.41" />
+          <path d="m17.66 17.66 1.41 1.41" />
+          <path d="M2 12h2" />
+          <path d="M20 12h2" />
+          <path d="m6.34 17.66-1.41 1.41" />
+          <path d="m19.07 4.93-1.41 1.41" />
+        </svg>
+        <button class="size-8 text-gray-700">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            xx
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hover:text-indigo-600"
+          >
+            <path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
+            <circle cx="12" cy="11" r="4" />
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+        </button>
+      </div>
+    </header>
+</body>
+</html>

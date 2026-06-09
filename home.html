@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="./image" />
-    <title>Document</title>
+    <link
+  rel="icon"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>"
+/>
+    <title>홈</title>
     <link
       rel="stylesheet"
       as="style"
@@ -135,129 +138,196 @@
     <!-- / -->
     <!-- / -->
     <main>
-      <div class="flex">
-        <div
-          class="border w-fit shadow-lg rounded-xl m-4 p-5 border-none bg-indigo-100 relative overflow-hidden"
-        >
-          <img
-            id="the_month_work"
-            src="./image/왕사남배너.png"
-            alt="이달의 작품"
-            class="rounded-lg w-[900px]"
-          />
-        </div>
-        <div class="text-white">
-          <div class="text-lg absolute top-28 left-15">이달의 작품</div>
-          <div id="title" class="absolute top-60 left-15 text-3xl font-bold">
-            왕과 사는 남자
-          </div>
-          <div id="desc" class="absolute top-72 left-15">사극, 드라마</div>
-          <div id="sub" class="absolute top-80 left-15">
-            1457년 청령포, 역사가 지우려 했던 이야기
-          </div>
+      <div class="flex items-start">
+        <div>
           <div
-            class="absolute top-95 left-15 border rounded-full p-2 pl-4 pr-4 border-white"
+            class="border shadow-lg rounded-xl m-4 p-5 border-none bg-indigo-100 relative overflow-hidden"
           >
-            자세히 보기
+            <img
+              id="the_month_work"
+              src="./image_movie/왕사남배너.png"
+              alt="이달의 작품"
+              class="rounded-lg w-[900px]"
+            />
+          </div>
+          <div class="text-white">
+            <div class="text-lg absolute top-28 left-15">이달의 작품</div>
+            <div id="title" class="absolute top-60 left-15 text-3xl font-bold">
+              왕과 사는 남자
+            </div>
+            <div id="desc" class="absolute top-72 left-15">사극, 드라마</div>
+            <div id="sub" class="absolute top-80 left-15">
+              1457년 청령포, 역사가 지우려 했던 이야기
+            </div>
+            <div
+              class="absolute top-95 left-15 border rounded-full p-2 pl-4 pr-4 border-white"
+            >
+              자세히 보기
+            </div>
+          </div>
+          <div class="flex rounded-lg ml-9 w-227 border border-gray-300">
+            <input
+              type="text"
+              placeholder="제목을 검색하세요."
+              class="flex-1 px-4 py-3 outline-none text-gray-600"
+            />
+            <div
+              class="bg-indigo-600 px-5 flex items-center justify-center rounded-r-lg hover:bg-indigo-700 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-gray-600"
+              >
+                <path d="m21 21-4.34-4.34" />
+                <circle cx="11" cy="11" r="8" />
+              </svg>
+            </div>
           </div>
         </div>
 
         <div class="border rounded-xl shadow-lg border-none p-7 w-140 m-3">
           <div class="flex items-center justify-between">
-            <div class="text-lg font-bold">최근 기록</div>
-            <div class="text-sm text-indigo-700 font-bold">전체 보기 ></div>
+            <div
+              class="text-lg font-bold border-b w-150 border-gray-300 pb-2 pl-2"
+            >
+              최근 기록
+            </div>
           </div>
           <div class="flex border-b border-gray-300">
             <img
               class="w-[70px] rounded-lg m-2"
-              src="./image/백룸.png"
+              src="./image_movie/백룸.png"
               alt="백룸"
             />
-            <div class="font-bold text-lg">백룸</div>
-            <div>영화</div>
-            <div class="text-sm">2026.05.27</div>
-            <div class="text-sm text-yellow-500">⭐3.5</div>
+            <div class="flex-1 flex justify-between  pt-2">
+              <div>
+              <div class="font-bold text-lg">백룸</div>
+              <div class="">영화</div>
+              <div class="text-sm">2026.05.27</div>
+              </div>
+              <div class="flex items-end p-3">
+              <div class="text-sm text-yellow-500 font-medium">⭐3.5</div></div>
+            </div>
           </div>
           <div class="flex border-b border-gray-300">
             <img
               class="w-[70px] rounded-lg m-2"
-              src="./image/겨울왕국.png"
+              src="./image_movie/겨울왕국.png"
               alt="겨울왕국"
             />
-            <div class="font-bold text-lg">겨울왕국</div>
-            <div>영화</div>
-            <div class="text-sm">2016.10.21</div>
-            <div class="text-sm text-yellow-500">⭐3.3</div>
+            <div class="flex-1 flex justify-between pt-2">
+              <div>
+                <div class="font-bold text-lg">겨울왕국</div>
+                <div>영화</div>
+                <div class="text-sm">2014.01.16</div>
+              </div>
+               <div class="flex items-end p-3">
+              <div class="text-sm text-yellow-500 font-medium">⭐3.2</div></div>
+            </div>
           </div>
           <div class="flex border-b border-gray-300">
             <img
               class="w-[70px] rounded-lg m-2"
-              src="./image/잭과 콩나무.png"
+              src="./image_book/잭과 콩나무.png"
               alt="잭과 콩나무"
             />
-            <div class="font-bold text-lg">잭과 콩나무</div>
-            <div>책</div>
-            <div class="text-sm">2005.08.25</div>
-            <div class="text-sm text-yellow-500">⭐2.5</div>
+            <div class="flex-1 flex justify-between pt-2">
+              <div>
+              <div class="font-bold text-lg">잭과 콩나무</div>
+              <div>책</div>
+              <div class="text-sm">2005.08.25</div>
+            </div>
+            <div class="flex items-end p-3">
+            <div class="text-sm text-yellow-500 font-medium">⭐ 2.5</div></div>
+            </div>
+            </div>
           </div>
         </div>
       </div>
-      <div
-        class="border border-gray-300 m-4 rounded-xl w-232 shadow-sm flex justify-end"
-      >
-        <input
-          type="text"
-          placeholder="제목, 키워드를 검색하세요."
-          class="text-gray-600 p-2 pl-4 outline-none"
-        />
-        <div
-          class="border border-none bg-indigo-600 rounded-r-xl p-3 pl-4 pr-7"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-white text-center"
-          >
-            <path d="m21 21-4.34-4.34" />
-            <circle cx="11" cy="11" r="8" />
-          </svg>
-        </div>
-      </div>
-      <div class="border">
-        <div>카데고리별 기록 통계</div>
-      </div>
     </main>
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <footer class="flex">
+      <div class="border rounded-lg border-gray-300 shadow-lg m-5 p-4">
+  <h2 class="font-bold text-lg pb-4">카테고리별 기록 통계</h2>
+
+  <div class="flex gap-4">
+
+    <!-- 영화 -->
+    <div class="border rounded-md text-center p-4 w-40 border-gray-300 shadow-md">
+      <div class="text-indigo-600 font-bold mb-2">🎬 영화</div>
+      <div class="font-bold text-3xl">25</div>
+      <div class="text-sm text-gray-500">전체 기록 수</div>
+    </div>
+
+    <!-- 책 -->
+    <div class="border rounded-md text-center p-4 w-40 border-gray-300 shadow-md">
+      <div class="text-indigo-600 font-bold mb-2">📚 책</div>
+      <div class="font-bold text-3xl">18</div>
+      <div class="text-sm text-gray-500">전체 기록 수</div>
+    </div>
+
+    <!-- 즐겨찾기 -->
+    <div class="border rounded-md text-center p-4 w-40 border-gray-300 shadow-md">
+      <div class="text-pink-500 font-bold mb-2">♥ 즐겨찾기</div>
+      <div class="font-bold text-3xl">32</div>
+      <div class="text-sm text-gray-500">즐겨찾기 수</div>
+    </div>
+
+    <!-- 총 기록 -->
+    <div class="border rounded-md text-center p-4 w-40 border-gray-300 shadow-md">
+      <div class="text-green-500 font-bold mb-2">📑 총 기록 수</div>
+      <div class="font-bold text-3xl">43</div>
+      <div class="text-sm text-gray-500">전체 기록 수</div>
+    </div>
+  </div>
+</div>
+<div>
+</div>
+<div class=" border rounded-lg border-gray-300 shadow-lg m-5 p-4">
+  <div class="font-bold text-lg pb-4">즐겨찾기 작품</div>
+  <div class="flex gap-2">
+  <img src="./image_book/여름 빛 아래 책.png" alt="여름 빛 아래" class="rounded-xl w-[110px]">
+  <img src="./image_book/내가 없던 어느 밤에 책.png" alt="내가 없던 어느 밤에" class="rounded-xl w-[110px]">
+  <img src="./image_book/나는 너를 아는데 책.png" alt="나는 너를 아는데" class="rounded-xl w-[110px]">
+  <img src="./image_movie/서울의 봄.png" alt="서울의 봄" class="rounded-xl w-[110px]">
+</div></div>
+    </footer>
   </body>
 </html>
 <script>
   const slides = [
     {
-      image: "./image/왕사남배너.png",
+      image: "./image_movie/왕사남배너.png",
       title: "왕과 사는 남자",
       desc: "사극, 드라마",
       sub: "1457년 청령포, 역사가 지우려 했던 이야기",
     },
     {
-      image: "./image/파묘배너.png",
+      image: "./image_movie/파묘배너.png",
       title: "파묘",
       desc: "공포, 미스터리, 스릴러, 서스펜스, 퇴마, 오컬트, 드라마, 역사, 크리처",
       sub: "험한 것이 나왔다",
     },
     {
-      image: "./image/휴민트배너.png",
+      image: "./image_movie/휴민트배너.png",
       title: "휴민트",
       desc: "첩보, 액션, 범죄, 드라마, 멜로, 스릴러, 느와르",
       sub: "휴민트가 노출되었다 반드시 살려야 한다",
     },
     {
-      image: "./image/배테랑배너.png",
+      image: "./image_movie/배테랑배너.png",
       title: "베테랑",
       desc: "액션, 범죄, 형사, 코미디, 미스터리, 스릴러, 사회고발",
       sub: "죄짓고 살지 말라 그랫지?",

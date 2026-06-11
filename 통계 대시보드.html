@@ -36,36 +36,25 @@
     </style>
   </head>
   <body class="font-[Pretendard_Variable]">
-    <header
+    <nav
       class="h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300"
     >
       <h1 class="text-xl font-bold font-seoul text-indigo-600">기록 보관소</h1>
       <div class="flex items-center text-gray-800 gap-6 text-sm font-medium">
+         <a href="./home.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">홈</a>
+
+        <a href="./movie_list.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">영화</a>
+
+
+        <a href="./book_list.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">책</a>
+        
         <button
           class="px-1 py-2 text-indigo-600 font-bold border-b-2 border-indigo-600"
         >
-          홈
-        </button>
-        <button
-          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
-        >
-          영화
-        </button>
-        <button
-          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
-        >
-          책
-        </button>
-        <button
-          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
-        >
           통계
         </button>
-        <button
-          class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300"
-        >
-          기록 작성
-        </button>
+
+        <a href="./기록_작성.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">기록 작성</a>
       </div>
       <div class="flex items-center gap-4">
         <div
@@ -114,6 +103,7 @@
           <path d="m6.34 17.66-1.41 1.41" />
           <path d="m19.07 4.93-1.41 1.41" />
         </svg>
+        <a href="./로그인.html">
         <button class="size-8 text-gray-700">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -130,8 +120,8 @@
             <circle cx="12" cy="11" r="4" />
             <circle cx="12" cy="12" r="10" />
           </svg>
-        </button>
+        </button></a>
       </div>
-    </header>
+    </nav>
 </body>
 </html>

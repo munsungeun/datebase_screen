@@ -1,263 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link
-  rel="icon"
-  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"
-/>
     <title>기록 작성</title>
-</head>
-<body>
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-    />
-    <style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"/>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
+  
+    <!-- 스타일 코드는 Tailwind 문법으로 해석 -->
+    <style type="text/tailwindcss">
+      /* 다크모드를 위한 커스텀 변형 스타일 규칙 정의 */
+      @custom-variant dark (&:where(.dark, .dark *));
+
+      /* 외부 서체(서울알림체) 정의 */
       @font-face {
         font-family: "SeoulNotice";
-        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Medium.woff2")
-          format("woff2");
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Medium.woff2") format("woff2");
         font-weight: 500;
         font-display: swap;
       }
 
+      /* 기본 서체를 Pretendard로 지정 */
       * {
         font-family: "Pretendard Variable";
       }
 
+      /* 서울알림체 클래스 정의 */
       .font-seoul {
         font-family: "SeoulNotice";
       }
     </style>
-  </head>
-  <body class="font-[Pretendard_Variable]">
-    <header
-      class="h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300"
-    >
-      <h1 class="text-xl font-bold font-seoul text-indigo-600">기록 보관소</h1>
-      <div class="flex items-center text-gray-800 gap-6 text-sm font-medium">
+</head>
+<body class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- 상단 네비게이션 바 -->
+    <nav class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-800 z-50 transition-colors duration-300">
+
+      <!-- 사이트 로고 -->
+      <h1 class="text-xl font-bold font-seoul text-indigo-600 dark:text-indigo-400">기록 보관소</h1>
+
+      <!-- 페이지 이동 -->
+      <div class="flex items-center text-gray-800 dark:text-gray-200 gap-6 text-sm font-medium">
         <a href="./home.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">홈</a>
-        
-         <a href="./movie_list.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">영화</a>
+
+        <a href="./movie_list.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">영화</a>
 
         <a href="./book_list.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">책</a>
 
-       <a href="./통계 대시보드.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">통계</a>
+        <a href="./통계 대시보드.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">통계</a>
 
-       <button class="px-1 py-2 text-indigo-600 font-bold border-b-2 border-indigo-600">기록 작성</button>
+        <button class="px-1 py-2 text-indigo-600 dark:text-indigo-400 font-bold border-b-2 border-indigo-600 dark:border-indigo-400 cursor-pointer">기록 작성</button>
+
+        <!-- 검색창, 테마 변경, 프로필 아이콘 -->
       </div>
       <div class="flex items-center gap-4">
-        <div
-          class="flex justify-center w-80 px-4 py-1 bg-white border border-gray-300 rounded-full shadow-md"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="text-gray-600"
-          >
+        <div class="flex justify-center w-80 px-4 py-1 bg-white border border-gray-300 rounded-full shadow-md dark:bg-gray-800 dark:border-gray-700 dark:shadow-none transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 dark:text-gray-400">
             <path d="m21 21-4.34-4.34" />
             <circle cx="11" cy="11" r="8" />
           </svg>
-          <input
-            type="text"
-            placeholder="검색"
-            class="flex-1 pl-2 outline-none bg-transparent"
-          />
+          <input type="text" placeholder="검색" class="flex-1 pl-2 outline-none bg-transparent dark:text-white dark:placeholder-gray-500"/>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="text-gray-600 hover:text-indigo-500"
-        >
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2" />
-          <path d="M12 20v2" />
-          <path d="m4.93 4.93 1.41 1.41" />
-          <path d="m17.66 17.66 1.41 1.41" />
-          <path d="M2 12h2" />
-          <path d="M20 12h2" />
-          <path d="m6.34 17.66-1.41 1.41" />
-          <path d="m19.07 4.93-1.41 1.41" />
-        </svg>
-        <a href="./로그인.html">
-        <button class="size-8 text-gray-700">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            xx
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="hover:text-indigo-600"
-          >
+
+        <button id="theme-toggle" class="cursor-pointer focus:outline-none flex items-center justify-center p-1" aria-label="테마 변경">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 hover:text-indigo-500 dark:hidden transition-colors">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden dark:block text-gray-400 hover:text-indigo-400 transition-colors">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+        </button>
+
+        <!-- 로그인/마이페이지 아이콘 -->
+        <a href="./로그인.html" class="size-8 text-gray-700 dark:text-gray-300">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:text-indigo-600 dark:hover:text-indigo-400">
             <path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
             <circle cx="12" cy="11" r="4" />
             <circle cx="12" cy="12" r="10" />
           </svg>
-        </button></a>
+        </a>
       </div>
-    </header>
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
-    <!--  -->
+    </nav>
+
+    <!-- 메인 영역 -->
     <main>
-       <div class="max-w-6xl mx-auto p-8">
-  <h1 class="text-4xl font-bold text-indigo-600 pb-10">
-    기록 작성
-  </h1>
-  <div class="flex gap-10">
-    <div class="w-[320px]">
-      <div class="pb-8">
-        <label class="block font-bold pb-3">카테고리</label>
+      <div class="max-w-6xl mx-auto p-8">
+        <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 pb-10 transition-colors duration-300">기록 작성</h1>
+        
+        <div class="flex gap-10">
+          <div class="w-[320px]">
+            <div class="pb-8">
+              <label class="block font-bold pb-3">카테고리</label>
+              <div class="flex gap-3">
+                <button class="category px-8 py-2 border border-gray-300 rounded-lg cursor-pointer transition-colors dark:border-gray-700 dark:text-gray-300 ">영화</button>
+                <button class="category px-8 py-2 border border-gray-300 rounded-lg cursor-pointer transition-colors dark:border-gray-700 dark:text-gray-300 ">책</button>
+              </div>
+            </div>
 
-        <div class="flex gap-3">
-          <button
-            class="category px-8 py-2 border border-gray-300 rounded-lg"
-          >
-            영화
-          </button>
+            <div class="pb-6">
+              <label class="block font-bold pb-2">제목</label>
+              <input type="text" placeholder="제목을 입력하세요" class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:border-indigo-500 dark:focus:border-indigo-400" />
+            </div>
 
-          <button
-            class="category px-8 py-2 border border-gray-300 rounded-lg"
-          >
-            책
-          </button>
+            <div class="pb-6">
+              <label class="block font-semibold pb-2">날짜</label>
+              <input type="date" class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-indigo-500 dark:focus:border-indigo-400" />
+            </div>
+
+            <div class="pb-6">
+              <label class="block font-semibold pb-2">장르</label>
+              <select class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-indigo-500 dark:focus:border-indigo-400">
+                <option>장르 선택</option>
+                <option>액션</option>
+                <option>드라마</option>
+                <option>코미디</option>
+                <option>로맨스</option>
+              </select>
+            </div>
+
+            <div class="pb-6">
+              <label class="block font-bold pb-3">별점</label>
+              <div id="stars" class="flex gap-2 text-2xl text-indigo-600 dark:text-indigo-400 font-bold transition-colors duration-300">
+                <div class="star cursor-pointer">☆</div>
+                <div class="star cursor-pointer">☆</div>
+                <div class="star cursor-pointer">☆</div>
+                <div class="star cursor-pointer">☆</div>
+                <div class="star cursor-pointer">☆</div>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <label class="block font-semibold mb-2">기타 메모 (선택)</label>
+              <input type="text" placeholder="간단한 메모를 입력하세요 (선택)" class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:border-indigo-500 dark:focus:border-indigo-400" />
+            </div>
+
+            <a href="./home.html">
+              <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-lg font-bold dark:bg-indigo-500 dark:hover:bg-indigo-600 transition-colors cursor-pointer">저장하기</button>
+            </a>
+          </div>
+
+          <div class="flex-1">
+            <label class="block font-bold pb-3">감상문</label>
+            <textarea placeholder="작품에 대한 감상을 자유롭게 작성해주세요." class="w-full h-[520px] border border-gray-300 rounded-lg p-4 resize-none outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:border-indigo-500 dark:focus:border-indigo-400"></textarea>
+          </div>
         </div>
       </div>
-
-      <div class="pb-6">
-        <label class="block font-bold pb-2">제목</label>
-
-        <input
-          type="text"
-          placeholder="제목을 입력하세요"
-          class="w-full  border border-gray-300 rounded-lg px-4 py-3 outline-none"
-        />
-      </div>
-
-      <div class="pb-6">
-        <label class="block font-semibold pb-2">날짜</label>
-
-        <input
-          type="date"
-          class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none"
-        />
-      </div>
-
-      <div class="pb-6">
-        <label class="block font-semibold pb-2">장르</label>
-
-        <select
-          class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none"
-        >
-          <option>장르 선택</option>
-          <option>액션</option>
-          <option>드라마</option>
-          <option>코미디</option>
-          <option>로맨스</option>
-        </select>
-      </div>
-
-      <!-- 별점 -->
-      <div class="pb-6">
-  <label class="block font-bold pb-3">별점</label>
-
-  <div id="stars" class="flex gap-2 text-2xl text-indigo-600 font-bold">
-    <div class="star cursor-pointer">☆</div>
-    <div class="star cursor-pointer">☆</div>
-    <div class="star cursor-pointer">☆</div>
-    <div class="star cursor-pointer">☆</div>
-    <div class="star cursor-pointer">☆</div>
-  </div>
-</div>
-
-      <!-- 메모 -->
-      <div class="mb-8">
-        <label class="block font-semibold mb-2">
-          기타 메모 (선택)
-        </label>
-
-        <input
-          type="text"
-          placeholder="간단한 메모를 입력하세요 (선택)"
-          class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none"
-        />
-      </div>
-
-      <!-- 저장 -->
-       <a href="./home.html">
-      <button
-        class="w-full bg-indigo-600 text-white py-4 rounded-lg font-bold hover:bg-indigo-700"
-      >
-        저장하기
-      </button></a>
-    </div>
-
-    <!-- 오른쪽 -->
-    <div class="flex-1">
-      <label class="block font-bold pb-3">
-        감상문
-      </label>
-
-      <textarea
-        placeholder="작품에 대한 감상을 자유롭게 작성해주세요."
-        class="w-full h-[520px] border border-gray-300 rounded-lg p-4 resize-none outline-none"
-      ></textarea>
-    </div>
-  </div>
-</div>
     </main>
-</body>
-</html>
+
 <script>
+// 다크모드 토글 및 유지 로직 
+const themeToggle = document.getElementById('theme-toggle');
+
+// 사용자의 이전 테마 설정 기록 확인 후, 없으면 시스템 설정(OS)의 다크모드 여부에 따라 기본 테마 지정
+if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark');
+} else {
+  document.documentElement.classList.remove('dark');
+}
+
+// 테마 토글 버튼 누를 때마다 상태 변경 및 로컬 스토리지 저장
+themeToggle.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark');
+  if (document.documentElement.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+// 별점 마킹 로직
 const stars = document.querySelectorAll(".star");
 
+// 별 하나를 클릭했을 때의 이벤트
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
-
     stars.forEach((s, i) => {
+      // 클릭한 별과 그 전의 별들은 채워진 별(★)로 바꾸고 강조 색상 클래스 추가
       if (i <= index) {
         s.textContent = "★";
         s.classList.add("text-yellow-400");
       } else {
+        // 클릭한 별보다 오른쪽에 있는 별들은 빈 별(☆)로 초기화하고 클래스 제거
         s.textContent = "☆";
         s.classList.remove("text-yellow-400");
       }
     });
-
   });
 });
+
+// 카테고리 선택 버튼 로직
 const categories = document.querySelectorAll(".category");
 categories.forEach(btn => {
+  // 카테고리 버튼(영화/책) 클릭 이벤트
   btn.addEventListener("click", () => {
+    // 먼저 모든 카테고리 버튼의 활성화 스타일(배경색, 글자색)을 지움
     categories.forEach(c => {
-      c.classList.remove("bg-indigo-600", "text-white");
+      c.classList.remove("bg-indigo-600", "text-white", "dark:bg-indigo-500");
     });
-
-    btn.classList.add("bg-indigo-600", "text-white");
+    // 현재 클릭된 버튼에만 활성화 스타일 클래스 적용
+    btn.classList.add("bg-indigo-600", "text-white", "dark:bg-indigo-500");
   });
 });
 </script>
+</body>
+</html>

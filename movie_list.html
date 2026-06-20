@@ -34,8 +34,9 @@
         font-family: "SeoulNotice";
       }
     </style>
-    <script>
-      // 새로고침 시 깜빡임(FOUC) 방지 처리
+    <!-- 동작 스크립트: 검색, 즐겨찾기, 테마 상태를 제어합니다. -->
+<script>
+      // 새로고침 시 화면 깜빡임을 줄이기 위한 처리
       if (
         localStorage.getItem("theme") === "dark" ||
         (!("theme" in localStorage) &&
@@ -50,7 +51,9 @@
   <body
     class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300"
   >
-    <nav
+    <!-- 영화 목록 화면: 저장한 영화를 확인하고 필터로 좁혀 보는 페이지입니다. -->
+    <!-- 상단 내비게이션: 홈, 영화, 책, 통계, 기록 작성으로 이동하는 공통 메뉴입니다. -->
+<nav
       class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-900 z-50"
     >
       <h1
@@ -87,7 +90,8 @@
           >기록 작성</a
         >
       </div>
-      <div class="flex items-center gap-4">
+      <!-- 도구 영역: 검색창, 테마 전환, 계정 아이콘을 모아 둡니다. -->
+<div class="flex items-center gap-4">
         <div
           class="flex justify-center w-80 px-4 py-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-full shadow-md"
         >
@@ -176,7 +180,8 @@
       </div>
     </nav>
 
-    <main class="p-8">
+    <!-- 본문 영역: 영화 목록과 필터 태그를 보여줍니다. -->
+<main class="p-8">
       <div class="flex justify-between items-center mb-6">
         <div class="text-3xl font-bold">영화 리스트</div>
         <a
@@ -213,7 +218,8 @@
         </svg>
       </div>
 
-      <div class="flex flex-wrap gap-3 mb-8">
+      <!-- 필터 태그: 장르와 분류를 빠르게 전환합니다. -->
+<div class="flex flex-wrap gap-3 mb-8">
         <button
           class="px-5 py-1.5 bg-indigo-600 text-white rounded-full text-sm"
         >
@@ -257,7 +263,8 @@
         </button></a>
       </div>
 
-      <div class="flex flex-wrap gap-8">
+      <!-- 카드 그리드: 저장된 영화를 격자 형태로 나열합니다. -->
+<div class="flex flex-wrap gap-8">
         <div class="relative w-[150px] flex flex-col">
           <div
             class="relative overflow-hidden rounded-lg shadow-md aspect-[2/3]"

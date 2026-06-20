@@ -8,7 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>"/>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"/>
   
-    <!-- 스타일 코드는 Tailwind 문법으로 해석 -->
+    <!-- 아래 스타일 블록은 Tailwind 문법으로 해석됩니다. -->
     <style type="text/tailwindcss">
       /* 다크모드를 위한 커스텀 변형 스타일 규칙 정의 */
       @custom-variant dark (&:where(.dark, .dark *));
@@ -33,14 +33,15 @@
     </style>
 </head>
 <body class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <!-- 기록 작성 화면: 책이나 영화를 본 뒤 남길 메모를 작성하는 페이지입니다. -->
 
-  <!-- 상단 네비게이션 바 -->
+  <!-- 상단 내비게이션: 다른 화면으로 이동할 수 있는 공통 메뉴입니다. -->
     <nav class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-800 z-50 transition-colors duration-300">
 
-      <!-- 사이트 로고 -->
+      <!-- 사이트 로고: 서비스 이름을 보여줍니다. -->
       <h1 class="text-xl font-bold font-seoul text-indigo-600 dark:text-indigo-400">기록 보관소</h1>
 
-      <!-- 페이지 이동 -->
+      <!-- 페이지 이동 메뉴: 홈, 영화, 책, 통계, 기록 작성으로 이동합니다. -->
       <div class="flex items-center text-gray-800 dark:text-gray-200 gap-6 text-sm font-medium">
         <a href="./home.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">홈</a>
 
@@ -52,7 +53,7 @@
 
         <button class="px-1 py-2 text-indigo-600 dark:text-indigo-400 font-bold border-b-2 border-indigo-600 dark:border-indigo-400 cursor-pointer">기록 작성</button>
 
-        <!-- 검색창, 테마 변경, 프로필 아이콘 -->
+        <!-- 도구 영역: 검색창, 테마 전환, 계정 아이콘을 배치합니다. -->
       </div>
       <div class="flex items-center gap-4">
         <div class="flex justify-center w-80 px-4 py-1 bg-white border border-gray-300 rounded-full shadow-md dark:bg-gray-800 dark:border-gray-700 dark:shadow-none transition-colors duration-300">
@@ -80,7 +81,7 @@
           </svg>
         </button>
 
-        <!-- 로그인/마이페이지 아이콘 -->
+        <!-- 계정 아이콘: 로그인 화면 또는 마이페이지로 연결됩니다. -->
         <a href="./로그인.html" class="size-8 text-gray-700 dark:text-gray-300">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hover:text-indigo-600 dark:hover:text-indigo-400">
             <path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
@@ -91,13 +92,14 @@
       </div>
     </nav>
 
-    <!-- 메인 영역 -->
-    <main>
+    <!-- 본문 영역: 기록 입력 폼을 배치합니다. -->
+<main>
       <div class="max-w-6xl mx-auto p-8">
         <h1 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 pb-10 transition-colors duration-300">기록 작성</h1>
         
         <div class="flex gap-10">
-          <div class="w-[320px]">
+          <!-- 왼쪽 입력 패널: 기록의 기본 정보를 입력합니다. -->
+<div class="w-[320px]">
             <div class="pb-8">
               <label class="block font-bold pb-3">카테고리</label>
               <div class="flex gap-3">
@@ -148,7 +150,8 @@
             </a>
           </div>
 
-          <div class="flex-1">
+          <!-- 오른쪽 메모 패널: 긴 설명을 자유롭게 적습니다. -->
+<div class="flex-1">
             <label class="block font-bold pb-3">감상문</label>
             <textarea placeholder="작품에 대한 감상을 자유롭게 작성해주세요." class="w-full h-[520px] border border-gray-300 rounded-lg p-4 resize-none outline-none transition-colors dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder-gray-500 focus:border-indigo-500 dark:focus:border-indigo-400"></textarea>
           </div>
@@ -156,6 +159,7 @@
       </div>
     </main>
 
+<!-- 스크립트 영역: 테마 상태와 별점 선택 동작을 처리합니다. -->
 <script>
 // 다크모드 기능
 

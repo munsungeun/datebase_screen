@@ -40,18 +40,20 @@
   </head>
 
   <body>
-    <!-- 상단 네비게이션 바 -->
-    <nav
+    <!-- 검색 화면: 앱 전체의 콘텐츠를 찾는 페이지입니다. -->
+    <!-- 상단 내비게이션: 다른 화면으로 이동할 수 있는 공통 메뉴입니다. -->
+    <!-- 상단 내비게이션: 홈과 다른 화면으로 이동하는 공통 메뉴입니다. -->
+<nav
       class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-800 z-50 transition-colors duration-300"
     >
-      <!-- 사이트 로고 -->
+      <!-- 사이트 로고: 서비스 이름을 보여줍니다. -->
       <h1
         class="text-xl font-bold font-seoul text-indigo-600 dark:text-indigo-400"
       >
         기록 보관소
       </h1>
 
-      <!-- 페이지 이동 -->
+      <!-- 페이지 이동 메뉴: 홈, 영화, 책, 통계, 기록 작성으로 이동합니다. -->
       <div
         class="flex items-center text-gray-800 dark:text-gray-200 gap-6 text-sm font-medium"
       >
@@ -85,7 +87,7 @@
           기록 작성
         </button>
 
-        <!-- 검색창, 테마 변경, 프로필 아이콘 -->
+        <!-- 도구 영역: 검색창, 테마 전환, 계정 아이콘을 배치합니다. -->
       </div>
       <div class="flex items-center gap-4">
         <div
@@ -157,7 +159,7 @@
           </svg>
         </button>
 
-        <!-- 로그인/마이페이지 아이콘 -->
+        <!-- 계정 아이콘: 로그인 화면 또는 마이페이지로 연결됩니다. -->
         <a href="./로그인.html" class="size-8 text-gray-700 dark:text-gray-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +179,8 @@
       </div>
     </nav>
     
-    <main class="space-y-7 px-80 max-lg:px-32 pt-10">
+    <!-- 본문 영역: 검색 결과와 관련 콘텐츠를 표시합니다. -->
+<main class="space-y-7 px-80 max-lg:px-32 pt-10">
       <div class="flex flex-col gap-2">
         <div class="font-bold text-3xl">검색 결과</div>
         <div class="text-gray-600">총 결과</div>
@@ -188,7 +191,8 @@
       ></div>
     </main>
   </body>
-  <script>
+  <!-- 스크립트 영역: 검색어를 읽어 결과를 불러옵니다. -->
+<script>
     // 검색창 요소 가져오기
     const input = document.getElementById("search");
 

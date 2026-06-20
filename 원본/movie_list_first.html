@@ -35,7 +35,7 @@
     }
   </style>
   <script>
-    // 새로고침 시 깜빡임(FOUC) 방지 처리
+    // 새로고침 시 화면 깜빡임을 줄이기 위한 처리
     if (
       localStorage.getItem('theme') === 'dark' || 
       (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -47,8 +47,10 @@
   </script>
 </head>
 <body class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300">
+    <!-- 원본 영화 목록 상태를 참고용으로 보관한 파일입니다. -->
   
-  <nav class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-900 z-50">
+  <!-- 상단 영역: 원본 영화 목록 화면의 공통 메뉴를 보관합니다. -->
+<nav class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 dark:border-gray-800 bg-white dark:bg-gray-900 z-50">
     <h1 class="text-xl font-bold font-seoul text-indigo-600 dark:text-indigo-400">기록 보관소</h1>
     <div class="flex items-center text-gray-800 dark:text-gray-200 gap-6 text-sm font-medium">
       <a href="./home.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">홈</a>

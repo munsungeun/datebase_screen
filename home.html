@@ -36,7 +36,7 @@
       }
     </style>
     <script>
-      // 새로고침 시 깜빡임(FOUC) 방지 처리
+      // 새로고침 시 화면 깜빡임을 줄이기 위한 처리
       if (
         localStorage.getItem('theme') === 'dark' || 
         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -48,7 +48,9 @@
     </script>
   </head>
   <body class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
-    <nav
+    <!-- 홈 화면: 책, 영화, 통계, 기록 작성으로 이동하는 시작 화면입니다. -->
+    <!-- 상단 영역: 공통 내비게이션과 빠른 접근 도구를 배치합니다. -->
+<nav
       class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 transition-colors duration-300"
     >
       <h1 class="text-xl font-bold font-seoul text-indigo-600 dark:text-indigo-400">기록 보관소</h1>
@@ -67,7 +69,8 @@
 
         <a href="./기록_작성.html" class="cursor-pointer px-1 py-2 font-normal hover:font-bold border-b-2 border-transparent hover:text-indigo-400 hover:border-indigo-400 transition-[font-weight,color,border-color] duration-300">기록 작성</a>
       </div>
-      <div class="flex items-center gap-4">
+      <!-- 도구 영역: 검색창, 테마 전환, 계정 아이콘을 모아 둡니다. -->
+<div class="flex items-center gap-4">
         <div
           class="flex justify-center w-80 px-4 py-1 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-full shadow-md"
         >
@@ -153,7 +156,8 @@
       </div>
     </nav>
     
-    <main>
+    <!-- 본문 영역: 홈 화면의 주요 기능과 요약 정보를 보여줍니다. -->
+<main>
       <div class="flex items-start">
         <div>
           <div
@@ -268,7 +272,8 @@
           </div>
         </div>
       </div>
-    </main>
+    <!-- 하단 전환 스크립트: 테마와 이동 동작을 처리합니다. -->
+</main>
     
     <footer class="flex">
       <div class="border rounded-lg border-gray-300 dark:border-gray-700 shadow-lg m-5 p-4 bg-white dark:bg-gray-800 transition-colors">

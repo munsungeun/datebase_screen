@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>북 리스트</title>
-    <!-- Tailwind CSS v4 CDN -->
+    <!-- 공통 스타일 스크립트를 불러옵니다. -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>"
     />
-    <!-- Pretendard 폰트 -->
+    <!-- 기본 글꼴을 불러옵니다. -->
     <link
       rel="stylesheet"
       as="style"
@@ -41,7 +41,8 @@
   <body
     class="font-[Pretendard_Variable] bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 transition-colors duration-300"
   >
-    <!-- 상단 네비게이션 -->
+    <!-- 책 목록 화면: 저장한 책을 확인하고 필터로 좁혀 보는 페이지입니다. -->
+    <!-- 상단 내비게이션: 홈, 영화, 책, 통계, 기록 작성으로 이동하는 공통 메뉴입니다. -->
     <nav
       class="sticky top-0 h-14 flex items-center justify-between py-4 px-6 border-b border-gray-300 bg-white dark:bg-gray-900 dark:border-gray-800 z-50 transition-colors duration-300"
     >
@@ -79,8 +80,9 @@
           >기록 작성</a
         >
       </div>
-      <div class="flex items-center gap-4">
-        <!-- 상단 검색창 -->
+      <!-- 도구 영역: 검색창, 테마 전환, 계정 아이콘을 모아 둡니다. -->
+<div class="flex items-center gap-4">
+        <!-- 상단 검색창: 저장된 항목을 빠르게 찾는 입력 영역입니다. -->
         <div
           class="flex justify-center w-80 px-4 py-1 bg-white border border-gray-300 rounded-full shadow-md dark:bg-gray-800 dark:border-gray-700 dark:shadow-none"
         >
@@ -106,7 +108,7 @@
             class="flex-1 pl-2 outline-none bg-transparent dark:text-white dark:placeholder-gray-500"
           />
         </div>
-        <!-- 테마 토글 버튼 -->
+        <!-- 테마 전환 버튼: 밝은 화면과 어두운 화면을 바꿉니다. -->
         <button
           id="theme-toggle"
           class="cursor-pointer focus:outline-none flex items-center justify-center p-1"
@@ -151,7 +153,7 @@
             <path d="m19.07 4.93-1.41 1.41" />
           </svg>
         </button>
-        <!-- 프로필 아이콘 -->
+        <!-- 프로필 아이콘: 로그인 또는 계정 정보를 확인하는 진입점입니다. -->
         <a href="./로그인.html" class="size-8 text-gray-700 dark:text-gray-300">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -171,8 +173,8 @@
       </div>
     </nav>
 
-    <!-- 메인 콘텐츠 -->
-    <main class="p-8">
+    <!-- 본문 영역: 책 목록과 필터 태그를 보여줍니다. -->
+<main class="p-8">
       <div class="flex justify-between items-center mb-6">
         <div class="text-3xl font-bold">책 리스트</div>
         <a
@@ -182,7 +184,7 @@
         >
       </div>
 
-      <!-- 메인 검색창 -->
+      <!-- 목록 검색창: 제목으로 항목을 다시 좁혀 찾습니다. -->
       <div
         class="flex items-center border border-gray-300 rounded-xl px-4 py-3 w-[800px] mb-6 dark:border-gray-700 dark:bg-gray-800"
       >
@@ -209,7 +211,7 @@
         </svg>
       </div>
 
-      <!-- 카테고리 필터 태그 -->
+      <!-- 필터 태그: 장르와 분류를 빠르게 전환합니다. -->
       <div class="flex gap-4 mb-10">
         <button
           class="px-6 py-2 bg-indigo-600 text-white rounded-full cursor-pointer dark:bg-indigo-500"
@@ -242,7 +244,7 @@
         </button></a>
       </div>
 
-      <!-- 책 리스트 그리드 영역 (16개 전체) -->
+      <!-- 카드 그리드: 16개의 책 항목을 격자 형태로 나열합니다. -->
       <div class="flex flex-wrap gap-x-8 gap-y-10 justify-start">
         <!-- 1. 나는 너를 아는데 -->
         <div class="w-[150px]">
@@ -955,7 +957,8 @@
       </div>
     </main>
 
-    <script>
+    <!-- 동작 스크립트: 검색과 테마 상태를 유지합니다. -->
+<script>
       // === 1. 다크모드 토글 로직 ===
       const themeToggle = document.getElementById("theme-toggle");
 

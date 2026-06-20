@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/search.js"></script>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>"
@@ -107,6 +108,7 @@
             <circle cx="11" cy="11" r="8" />
           </svg>
           <input
+            id="search2"
             type="text"
             placeholder="검색"
             class="flex-1 pl-2 outline-none bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400"
@@ -190,6 +192,7 @@
         class="flex items-center border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 rounded-xl px-4 py-3 w-full max-w-[800px] mb-6"
       >
         <input
+          id="search"
           type="text"
           placeholder="영화 제목을 검색하세요"
           class="flex-1 outline-none bg-transparent dark:text-white dark:placeholder-gray-500"
@@ -470,5 +473,25 @@
         localStorage.setItem("theme", "dark");
       }
     });
+    const input = document.getElementById("search");
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        window.location.href = `검색.html?db=${e.currentTarget.value}`;
+      }
+    });
+
+    const searchParams = new URLSearchParams(window.location.search);
+    input.value = searchParams.get("db");
+
+    const input2 = document.getElementById("search2");
+
+    input2.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        window.location.href = `검색.html?db=${e.currentTarget.value}`;
+      }
+    });
+
+    input2.value = searchParams.get("db");
   </script>
 </html>

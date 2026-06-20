@@ -60,7 +60,7 @@
             <path d="m21 21-4.34-4.34" />
             <circle cx="11" cy="11" r="8" />
           </svg>
-          <input type="text" placeholder="검색" class="flex-1 pl-2 outline-none bg-transparent dark:text-white dark:placeholder-gray-500"/>
+          <input id="search" type="text" placeholder="검색" class="flex-1 pl-2 outline-none bg-transparent dark:text-white dark:placeholder-gray-500"/>
         </div>
 
         <button id="theme-toggle" class="cursor-pointer focus:outline-none flex items-center justify-center p-1" aria-label="테마 변경">
@@ -157,19 +157,26 @@
     </main>
 
 <script>
-// 다크모드 토글 및 유지 로직 
+// 다크모드 기능
+
+// 테마 변경 버튼 가져오기
 const themeToggle = document.getElementById('theme-toggle');
 
-// 사용자의 이전 테마 설정 기록 확인 후, 없으면 시스템 설정(OS)의 다크모드 여부에 따라 기본 테마 지정
+//  저장된 테마 설정 확인
+// 저장된 값이 dark 거나 시스템 설정이 다크모드라면 다크모드 적용
 if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
   document.documentElement.classList.add('dark');
 } else {
   document.documentElement.classList.remove('dark');
 }
 
-// 테마 토글 버튼 누를 때마다 상태 변경 및 로컬 스토리지 저장
+// 테마 변경 버튼 클릭 시 다크모드/라이트모드 전환
 themeToggle.addEventListener('click', () => {
+
+  // html 태그에 dark 클래스 추가 또는 제거
   document.documentElement.classList.toggle('dark');
+
+  // 현재 상태를 localStorage에 저장, 새로고침 후에도 유지
   if (document.documentElement.classList.contains('dark')) {
     localStorage.setItem('theme', 'dark');
   } else {
@@ -177,19 +184,24 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// 별점 마킹 로직
+// 별점 기능
+
+// 모든 별 요소 가져오기
 const stars = document.querySelectorAll(".star");
 
-// 별 하나를 클릭했을 때의 이벤트
+// 각 별에 클릭 이벤트 등록
 stars.forEach((star, index) => {
   star.addEventListener("click", () => {
+    
+    // 클릭된 별 위치까지 채워진 별로 표시
     stars.forEach((s, i) => {
-      // 클릭한 별과 그 전의 별들은 채워진 별(★)로 바꾸고 강조 색상 클래스 추가
+      
       if (i <= index) {
         s.textContent = "★";
         s.classList.add("text-yellow-400");
       } else {
-        // 클릭한 별보다 오른쪽에 있는 별들은 빈 별(☆)로 초기화하고 클래스 제거
+        
+        // 나머지 별은 빈 별로 초기화
         s.textContent = "☆";
         s.classList.remove("text-yellow-400");
       }
@@ -197,19 +209,46 @@ stars.forEach((star, index) => {
   });
 });
 
-// 카테고리 선택 버튼 로직
+// 카테고리 선택 기능
+
+// 영화, 책 카테고리 버튼 가져오기
 const categories = document.querySelectorAll(".category");
+
+// 각 버튼에 클릭 이벤트 등록
 categories.forEach(btn => {
-  // 카테고리 버튼(영화/책) 클릭 이벤트
+ 
   btn.addEventListener("click", () => {
-    // 먼저 모든 카테고리 버튼의 활성화 스타일(배경색, 글자색)을 지움
+
+   // 모든 버튼의 선택 상태 제거
     categories.forEach(c => {
       c.classList.remove("bg-indigo-600", "text-white", "dark:bg-indigo-500");
     });
-    // 현재 클릭된 버튼에만 활성화 스타일 클래스 적용
+
+    // 현재 클릭한 버튼만 선택 상태로 변경
     btn.classList.add("bg-indigo-600", "text-white", "dark:bg-indigo-500");
   });
 });
+
+// 검색 기능
+
+// 검색 입력창 가져오기
+const input = document.getElementById("search");
+
+    // 엔터 키 입력 시 검색 페이지로 이동
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+
+            // 입력한 검색어를 url 파라미터로 전달
+            window.location.href = `검색.html?db=${e.currentTarget.value}`;
+        }
+    });
+    
+    // url에 저장된 검색어 가져오기
+    const searchParams = new URLSearchParams(window.location.search);
+
+    // 검색창에 검색어 표시
+    input.value = searchParams.get("db");
+
 </script>
 </body>
 </html>

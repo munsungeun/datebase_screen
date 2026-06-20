@@ -80,6 +80,7 @@
             <circle cx="11" cy="11" r="8" />
           </svg>
           <input
+            id="search"
             type="text"
             placeholder="검색"
             class="flex-1 pl-2 outline-none bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400"
@@ -334,5 +335,15 @@
         localStorage.setItem("theme", "dark");
       }
     });
+    const input = document.getElementById("search");
+
+    input.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            window.location.href = `검색.html?db=${e.currentTarget.value}`;
+        }
+    });
+
+    const searchParams = new URLSearchParams(window.location.search);
+    input.value = searchParams.get("db");
 </script>
 </html>

@@ -213,19 +213,19 @@
     const workList = document.getElementById("list");
 
     // json 파일에서 작품 데이터 불러오기
-    fetch(`${window.location.origin}/works.json`)
-      .then((res) => res.json())
-      .then((json) => {
+    fetch(`${window.location.origin}/works.json`) // 인터넷에서 데이터를 가져옴
+      .then((res) => res.json()) //자바스크립트 객체로 변환
+      .then((json) => { //json 변수로 받아 작업
 
         // 검색어가 포함된 작품만 필터링
         json.data
-          .filter((E) => {
-            return E.includes(searchParams.get("db"));
+          .filter((E) => { // 검색어가 작품의 제목에 포함되어 있는지 확인
+            return E.includes(searchParams.get("db")); 
           })
 
           // 검색 결과를 화면에 출력
           .forEach((e) => {
-            workList.insertAdjacentHTML(
+            workList.insertAdjacentHTML( //배열 안에 있는 데이터를 하나씩 꺼내서 HTML로 출력
               "beforeend",
               `
 <div class="w-[150px]">

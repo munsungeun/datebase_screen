@@ -1152,17 +1152,21 @@
         localStorage.setItem("theme", "dark");
       }
     });
-
+      // 검색창 요소 가져오기
       const input = document.getElementById("search");
 
+      //검색창에서 엔터키를 눌렀을 때 검색.html로 이동하면서 검색어를 쿼리스트링으로 전달
     input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {
+          // 입력한 검색어를 url 파라미터로 전달
             window.location.href = `검색.html?db=${e.currentTarget.value}`;
         }
     });
-
+    // 현재 url의 검색어 가져오기
     const searchParams = new URLSearchParams(window.location.search);
+    
     input.value = searchParams.get("db");
+
 
       const input2 = document.getElementById("search2");
 
